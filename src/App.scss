@@ -1,1 +1,15 @@
-@import "~bootstrap/scss/bootstrap";
+@import "custom";
+
+.userIconThumbnail {
+  width: 50px;
+  height: 50px;
+}
+
+.teamIconThumbnail {
+  width: 50px;
+  height: 50px;
+}
+
+.teamMemberCard {
+  width: 50%;
+}
