@@ -1,4 +1,4 @@
-import { Badge, Button, Card, CardGroup, Carousel, Col, Container, FloatingLabel, Form, Image, ListGroup, Modal, Nav, NavDropdown, Navbar, ProgressBar, Row, Tab } from 'react-bootstrap';
+import { Badge, Button, Card, CardGroup, Carousel, Col, Collapse, Container, FloatingLabel, Form, Image, ListGroup, Modal, Nav, NavDropdown, Navbar, ProgressBar, Row, Tab } from 'react-bootstrap';
 import './App.scss';
 import Header from './components/Header';
 import Main from './components/Main';
@@ -8,6 +8,12 @@ import { useState } from 'react';
 
 
 function App() {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(!open)
+
+  const [open1, setOpen1] = useState(false);
+  const handleOpen1 = () => setOpen1(!open1)
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -64,174 +70,650 @@ function App() {
       </Container>
       
       <Container>
-        <CardGroup>
-
-          <Card>
-            <Card.Header className='d-flex align-items-center justify-content-between'>
-              {/* <Image className='userIconThumbnail' roundedCircle src={endDesignLogo} /> */}
-              <Card.Img className='userIconThumbnail' roundedCircle src={endDesignLogo} />
-              <Card.Title>
-                Awesomness
-                <Badge bg="primary">#Fazer</Badge>
-              </Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
-              </Card.Text>
-              <div>
-                <h2>Looking for</h2>
-                <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
-                  <Row>
-                    <Col sm={4}>
-                      <ListGroup>
-                        <ListGroup.Item action href="#link1">
-                          Link 1
-                        </ListGroup.Item>
-                        <ListGroup.Item action href="#link2">
-                          Link 2
-                        </ListGroup.Item>
-                      </ListGroup>
-                    </Col>
-                    <Col sm={8}>
-                      <Tab.Content>
-                        <Tab.Pane eventKey="#link1">
-                          <p>Some text Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sequi. Perspiciatis sit, eum porro corrupti quidem iste in amet suscipit, et debitis at ab a? Illo fugiat obcaecati quidem rerum.</p>
-                          <Button onClick={handleShowRole} >Apply</Button>
-                        </Tab.Pane>
-                        <Tab.Pane eventKey="#link2">
-                          <p>Some text Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sequi. Perspiciatis sit, eum porro corrupti quidem iste in amet suscipit, et debitis at ab a? Illo fugiat obcaecati quidem rerum.</p>
-                          <Button onClick={handleShowRole} >Apply</Button>
-                        </Tab.Pane>
-                      </Tab.Content>
-                    </Col>
-                  </Row>
-                </Tab.Container>
-              </div>
-
-
-            </Card.Body>
-            <Card.Footer>
-              <Button variant="primary">Request to Join</Button>
-              <Button variant="primary" onClick={handleShow}>
-                Launch demo modal
-              </Button>
-
-              
-
-            </Card.Footer>
-          </Card>
-
-          <Card>
-            <Card.Header className='d-flex align-items-center justify-content-between'>
-              {/* <Image className='userIconThumbnail' roundedCircle src={endDesignLogo} /> */}
-              <Card.Img className='userIconThumbnail' roundedCircle src={endDesignLogo} />
-              <Card.Title>
-                Awesomness
-                <Badge bg="primary">#Fazer</Badge>
-              </Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
-              </Card.Text>
+          <Row xs={1} md={2} lg={3} className='g-lg-4 g-md-3 g-sm-2'>
+            <Col>
+              <Card>
+                <Card.Header className='d-flex align-items-center justify-content-between'>
+                  {/* <Image className='userIconThumbnail' roundedCircle src={endDesignLogo} /> */}
+                  <Card.Img className='userIconThumbnail' roundedCircle src={endDesignLogo} />
+                  <Card.Title>
+                    Awesomness
+                    <Badge bg="primary">#Fazer</Badge>
+                  </Card.Title>
+                </Card.Header>
+                <Card.Body>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  <div>
+                    <h2>Looking for</h2>
+                    <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
+                      <Row>
+                        <Col sm={4}>
+                          <ListGroup>
+                            <ListGroup.Item action href="#link1">
+                              Link 1
+                            </ListGroup.Item>
+                            <ListGroup.Item action href="#link2">
+                              Link 2
+                            </ListGroup.Item>
+                          </ListGroup>
+                        </Col>
+                        <Col sm={8}>
+                          <Tab.Content>
+                            <Tab.Pane eventKey="#link1">
+                              <p>Some text Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sequi. Perspiciatis sit, eum porro corrupti quidem iste in amet suscipit, et debitis at ab a? Illo fugiat obcaecati quidem rerum.</p>
+                              <Button onClick={handleShowRole} >Apply</Button>
+                            </Tab.Pane>
+                            <Tab.Pane eventKey="#link2">
+                              <p>Some text Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sequi. Perspiciatis sit, eum porro corrupti quidem iste in amet suscipit, et debitis at ab a? Illo fugiat obcaecati quidem rerum.</p>
+                              <Button onClick={handleShowRole} >Apply</Button>
+                            </Tab.Pane>
+                          </Tab.Content>
+                        </Col>
+                      </Row>
+                    </Tab.Container>
+                  </div>
 
 
-              <CardGroup>
-                <Card className='teamMemberCard'>
-                  <Image fluid rounded src={endDesignLogo} />
-                  <Card.Body>
-                    <Card.Title>Person Named</Card.Title>
-                    <Card.Text>
-                      Role
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card className='teamMemberCard'>
-                  <Image fluid rounded src={endDesignLogo} />
-                  <Card.Body>
-                    <Card.Title>Person Named</Card.Title>
-                    <Card.Text>
-                      Role
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card className='teamMemberCard'>
-                  <Image fluid rounded src={endDesignLogo} />
-                  <Card.Body>
-                    <Card.Title>Person Named</Card.Title>
-                    <Card.Text>
-                      Role
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </CardGroup>
+                </Card.Body>
+                <Card.Footer>
+                  <Button variant="primary" onClick={handleShow}>
+                    Launch demo modal
+                  </Button>
+                  <Button
+                    onClick={handleOpen1}
+                    aria-controls="example-collapse-text"
+                    aria-expanded={open1}
+                  >
+                    click
+                  </Button>
+                  <Collapse in={open1}>
+                    <div id="example-collapse-text">
+                      <h2>Team</h2>
+                      <Carousel>
+                        <Carousel.Item>
+                          <CardGroup>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                          </CardGroup>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                          <CardGroup>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                          </CardGroup>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                          <CardGroup>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                          </CardGroup>
+                        </Carousel.Item>
+                      </Carousel>
+                    </div>
+                  </Collapse>
+                </Card.Footer>
+              </Card>
+            </Col>
+            <Col>
+              <Card>
+                <Card.Header className='d-flex align-items-center justify-content-between'>
+                  {/* <Image className='userIconThumbnail' roundedCircle src={endDesignLogo} /> */}
+                  <Card.Img className='userIconThumbnail' roundedCircle src={endDesignLogo} />
+                  <Card.Title>
+                    Awesomness
+                    <Badge bg="primary">#Fazer</Badge>
+                  </Card.Title>
+                </Card.Header>
+                <Card.Body>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  <div>
+                    <h2>Looking for</h2>
+                    <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
+                      <Row>
+                        <Col sm={4}>
+                          <ListGroup>
+                            <ListGroup.Item action href="#link1">
+                              Link 1
+                            </ListGroup.Item>
+                            <ListGroup.Item action href="#link2">
+                              Link 2
+                            </ListGroup.Item>
+                          </ListGroup>
+                        </Col>
+                        <Col sm={8}>
+                          <Tab.Content>
+                            <Tab.Pane eventKey="#link1">
+                              <p>Some text Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sequi. Perspiciatis sit, eum porro corrupti quidem iste in amet suscipit, et debitis at ab a? Illo fugiat obcaecati quidem rerum.</p>
+                              <Button onClick={handleShowRole} >Apply</Button>
+                            </Tab.Pane>
+                            <Tab.Pane eventKey="#link2">
+                              <p>Some text Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sequi. Perspiciatis sit, eum porro corrupti quidem iste in amet suscipit, et debitis at ab a? Illo fugiat obcaecati quidem rerum.</p>
+                              <Button onClick={handleShowRole} >Apply</Button>
+                            </Tab.Pane>
+                          </Tab.Content>
+                        </Col>
+                      </Row>
+                    </Tab.Container>
+                  </div>
 
 
-            </Card.Body>
-            <Card.Footer>
-              <Button variant="primary">Request to Join</Button>
+                </Card.Body>
+                <Card.Footer>
+                  <Button variant="primary" onClick={handleShow}>
+                    Launch demo modal
+                  </Button>
+                  <Button
+                    onClick={handleOpen}
+                    aria-controls="example-collapse-text"
+                    aria-expanded={open}
+                  >
+                    click
+                  </Button>
+                  <Collapse in={open}>
+                    <div id="example-collapse-text">
+                      <h2>Team</h2>
+                      <Carousel>
+                        <Carousel.Item>
+                          <CardGroup>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                          </CardGroup>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                          <CardGroup>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                          </CardGroup>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                          <CardGroup>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                          </CardGroup>
+                        </Carousel.Item>
+                      </Carousel>
+                    </div>
+                  </Collapse>
+                </Card.Footer>
+              </Card>
+            </Col>
+            <Col>
+              <Card>
+                <Card.Header className='d-flex align-items-center justify-content-between'>
+                  {/* <Image className='userIconThumbnail' roundedCircle src={endDesignLogo} /> */}
+                  <Card.Img className='userIconThumbnail' roundedCircle src={endDesignLogo} />
+                  <Card.Title>
+                    Awesomness
+                    <Badge bg="primary">#Fazer</Badge>
+                  </Card.Title>
+                </Card.Header>
+                <Card.Body>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  <div>
+                    <h2>Looking for</h2>
+                    <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
+                      <Row>
+                        <Col sm={4}>
+                          <ListGroup>
+                            <ListGroup.Item action href="#link1">
+                              Link 1
+                            </ListGroup.Item>
+                            <ListGroup.Item action href="#link2">
+                              Link 2
+                            </ListGroup.Item>
+                          </ListGroup>
+                        </Col>
+                        <Col sm={8}>
+                          <Tab.Content>
+                            <Tab.Pane eventKey="#link1">
+                              <p>Some text Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sequi. Perspiciatis sit, eum porro corrupti quidem iste in amet suscipit, et debitis at ab a? Illo fugiat obcaecati quidem rerum.</p>
+                              <Button onClick={handleShowRole} >Apply</Button>
+                            </Tab.Pane>
+                            <Tab.Pane eventKey="#link2">
+                              <p>Some text Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sequi. Perspiciatis sit, eum porro corrupti quidem iste in amet suscipit, et debitis at ab a? Illo fugiat obcaecati quidem rerum.</p>
+                              <Button onClick={handleShowRole} >Apply</Button>
+                            </Tab.Pane>
+                          </Tab.Content>
+                        </Col>
+                      </Row>
+                    </Tab.Container>
+                  </div>
 
-            </Card.Footer>
-          </Card>
 
-          <Card>
-            <Card.Header className='d-flex align-items-center justify-content-between'>
-              {/* <Image className='userIconThumbnail' roundedCircle src={endDesignLogo} /> */}
-              <Card.Img className='userIconThumbnail' roundedCircle src={endDesignLogo} />
-              <Card.Title>
-                Awesomness
-                <Badge bg="primary">#Fazer</Badge>
-              </Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
-              </Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                  <Button variant="primary" onClick={handleShow}>
+                    Launch demo modal
+                  </Button>
+                  <Button
+                    onClick={handleOpen}
+                    aria-controls="example-collapse-text"
+                    aria-expanded={open}
+                  >
+                    click
+                  </Button>
+                  <Collapse in={open}>
+                    <div id="example-collapse-text">
+                      <h2>Team</h2>
+                      <Carousel>
+                        <Carousel.Item>
+                          <CardGroup>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                          </CardGroup>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                          <CardGroup>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                          </CardGroup>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                          <CardGroup>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                          </CardGroup>
+                        </Carousel.Item>
+                      </Carousel>
+                    </div>
+                  </Collapse>
+                </Card.Footer>
+              </Card>
+            </Col>
+            <Col>
+              <Card>
+                <Card.Header className='d-flex align-items-center justify-content-between'>
+                  {/* <Image className='userIconThumbnail' roundedCircle src={endDesignLogo} /> */}
+                  <Card.Img className='userIconThumbnail' roundedCircle src={endDesignLogo} />
+                  <Card.Title>
+                    Awesomness
+                    <Badge bg="primary">#Fazer</Badge>
+                  </Card.Title>
+                </Card.Header>
+                <Card.Body>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  <div>
+                    <h2>Looking for</h2>
+                    <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
+                      <Row>
+                        <Col sm={4}>
+                          <ListGroup>
+                            <ListGroup.Item action href="#link1">
+                              Link 1
+                            </ListGroup.Item>
+                            <ListGroup.Item action href="#link2">
+                              Link 2
+                            </ListGroup.Item>
+                          </ListGroup>
+                        </Col>
+                        <Col sm={8}>
+                          <Tab.Content>
+                            <Tab.Pane eventKey="#link1">
+                              <p>Some text Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sequi. Perspiciatis sit, eum porro corrupti quidem iste in amet suscipit, et debitis at ab a? Illo fugiat obcaecati quidem rerum.</p>
+                              <Button onClick={handleShowRole} >Apply</Button>
+                            </Tab.Pane>
+                            <Tab.Pane eventKey="#link2">
+                              <p>Some text Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sequi. Perspiciatis sit, eum porro corrupti quidem iste in amet suscipit, et debitis at ab a? Illo fugiat obcaecati quidem rerum.</p>
+                              <Button onClick={handleShowRole} >Apply</Button>
+                            </Tab.Pane>
+                          </Tab.Content>
+                        </Col>
+                      </Row>
+                    </Tab.Container>
+                  </div>
 
 
-              <CardGroup>
-                <Card className='teamMemberCard'>
-                  <Image fluid rounded src={endDesignLogo} />
-                  <Card.Body>
-                    <Card.Title>Person Named</Card.Title>
-                    <Card.Text>
-                      Role
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card className='teamMemberCard'>
-                  <Image fluid rounded src={endDesignLogo} />
-                  <Card.Body>
-                    <Card.Title>Person Named</Card.Title>
-                    <Card.Text>
-                      Role
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card className='teamMemberCard'>
-                  <Image fluid rounded src={endDesignLogo} />
-                  <Card.Body>
-                    <Card.Title>Person Named</Card.Title>
-                    <Card.Text>
-                      Role
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </CardGroup>
+                </Card.Body>
+                <Card.Footer>
+                  <Button variant="primary" onClick={handleShow}>
+                    Launch demo modal
+                  </Button>
+                  <Button
+                    onClick={handleOpen}
+                    aria-controls="example-collapse-text"
+                    aria-expanded={open}
+                  >
+                    click
+                  </Button>
+                  <Collapse in={open}>
+                    <div id="example-collapse-text">
+                      <h2>Team</h2>
+                      <Carousel>
+                        <Carousel.Item>
+                          <CardGroup>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                          </CardGroup>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                          <CardGroup>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                          </CardGroup>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                          <CardGroup>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                            <Card className='teamMemberCard'>
+                              <Image fluid rounded src={endDesignLogo} />
+                              <Card.Body>
+                                <Card.Title>Person Named</Card.Title>
+                                <Card.Text>
+                                  Role
+                                </Card.Text>
+                                <Button  onClick={handleShowMember} variant="primary">Go somewhere</Button>
+                              </Card.Body>
+                            </Card>
+                          </CardGroup>
+                        </Carousel.Item>
+                      </Carousel>
+                    </div>
+                  </Collapse>
+                </Card.Footer>
+              </Card>
+            </Col>
+          </Row>
 
 
-            </Card.Body>
-            <Card.Footer>
-              <Button variant="primary">Request to Join</Button>
-
-            </Card.Footer>
-          </Card>
-
-        </CardGroup>
       </Container>
       <Modal show={show} size='lg' fullscreen='lg-down' onHide={handleClose}>
         <Modal.Header closeButton>
