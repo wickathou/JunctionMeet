@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactMultiCarousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import TeamCard from './TeamCard';
-import { Card } from 'react-bootstrap';
 import RoleCard from './RoleCard';
 
-function MultiCarousel({ elements }) {
+function MultiCarousel({ elements}) {
+
   let content
   if (elements && elements.length > 0) {
       content = elements.map((element) => <RoleCard/> )
@@ -23,7 +22,7 @@ function MultiCarousel({ elements }) {
       draggable
       focusOnSelect={false}
       infinite
-      itemClass="custom"
+      itemClass=""
       keyBoardControl
       minimumTouchDrag={80}
       partialVisible
@@ -37,8 +36,8 @@ function MultiCarousel({ elements }) {
             max: 3000,
             min: 1024,
           },
-          items: 1,
-          partialVisibilityGutter: 10,
+          items: 3,
+          partialVisibilityGutter: 40,
         },
         mobile: {
           breakpoint: {

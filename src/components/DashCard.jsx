@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Badge, Button, Card, CardGroup, Carousel, Col, Collapse, Image, ListGroup, Row, Tab,
 } from 'react-bootstrap';
@@ -8,15 +8,16 @@ import '../App.scss';
 import TeamCard from './TeamCard';
 import TeamModal from './TeamModal';
 import RolesPreview from './RolesPreview';
-import RoleApplyModal from './RoleApplyModal';
+import RoleModal from './RoleModal';
 import MemberModal from './MemberModal';
 
 function DashCard({ data }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(!open);
 
+
   const [open1, setOpen1] = useState(false);
-  const handleOpen1 = () => setOpen1(!open1);
+  const handleOpen1 = () => setOpen1(!open1)
 
   const [show, setShow] = useState(false);
 
@@ -56,7 +57,6 @@ function DashCard({ data }) {
         </Card.Text>
         <div>
           <h2>Looking for</h2>
-          {/* <RolesPreview handleShowRole={handleShowRole} /> */}
           <MultiCarousel elements={teamData.roles}/>
         </div>
 
@@ -69,13 +69,11 @@ function DashCard({ data }) {
         </Button>
         <Button
           onClick={handleOpen1}
-          aria-controls="example-collapse-text"
-          aria-expanded={open1}
         >
           click
         </Button>
         <Collapse in={open1}>
-          <div id="example-collapse-text">
+          <div>
             <h2>Team</h2>
             <Carousel>
               <Carousel.Item>
@@ -87,7 +85,7 @@ function DashCard({ data }) {
           </div>
         </Collapse>
       </Card.Footer>
-      <RoleApplyModal showRole={showRole} handleCloseRole={handleCloseRole} roleData={data}/>
+      <RoleModal showRole={showRole} handleCloseRole={handleCloseRole} roleData={data}/>
       <TeamModal toggleState={show} handleClose={handleClose} data={data} />
     </Card>
   );

@@ -3,7 +3,7 @@ import {
   Badge, Button, Col, FloatingLabel, Form, ListGroup, Modal, ProgressBar, Row, Tab,
 } from 'react-bootstrap';
 
-function RoleApplyModal({ showRole, handleCloseRole, roleData }) {
+function RoleModal({ showRole, handleCloseRole, roleData }) {
   return (
     <Modal show={showRole} size="lg" fullscreen="lg-down" onHide={handleCloseRole}>
       <Modal.Header closeButton>
@@ -109,4 +109,4 @@ function RoleApplyModal({ showRole, handleCloseRole, roleData }) {
   );
 }
 
-export default RoleApplyModal;
+export default RoleModal;

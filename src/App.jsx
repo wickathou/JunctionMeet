@@ -12,6 +12,9 @@ import endDesignLogo from './assets/logo.svg';
 import 'react-multi-carousel/lib/styles.css';
 import NavFilters from './components/NavFilters';
 import DashCard from './components/DashCard';
+import { Route, Routes } from 'react-router-dom';
+import Layout from './components/Layout';
+import UserDashboard from './pages/UserDashboard';
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -39,17 +42,20 @@ function App() {
 
   return (
     <>
-      <Header />
-
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<UserDashboard />} />
+        </Route>
+      </Routes>
+      {/* <Header />
       <NavFilters />
       <Container>
-        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 1000: 3 }}>
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2}}>
           <Masonry gutter="20px">
             {testArray.map((item) => <DashCard key={item} data={item} />)}
           </Masonry>
         </ResponsiveMasonry>
       </Container>
-
       <Modal show={showMember} size="md" fullscreen="lg-down" onHide={handleCloseMember}>
         <Modal.Header closeButton>
           <Modal.Title>
@@ -69,7 +75,7 @@ function App() {
             Save Changes
           </Button>
         </Modal.Footer>
-      </Modal>
+      </Modal> */}
     </>
   );
 }
