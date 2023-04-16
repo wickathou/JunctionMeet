@@ -33,8 +33,9 @@ function DashCard({ data }) {
   const handleCloseMember = () => setShowMember(false);
   const handleShowMember = () => setShowMember(true);
 
-  const {name, members, challenge, roles} = data
-  console.log(members);
+  const {
+    name, members, challenge, roles,
+  } = data;
 
   return (
     <Card>
@@ -42,7 +43,7 @@ function DashCard({ data }) {
         <Card.Img className="userIconThumbnail" src={icon} />
         <Card.Title>
           {name}
-          <Badge className='ms-1' bg="primary">{challenge ? `#${challenge}` : 'No challenge'}</Badge>
+          <Badge className="ms-1" bg="primary">{challenge ? `#${challenge}` : 'No challenge'}</Badge>
         </Card.Title>
       </Card.Header>
       <Card.Body>
@@ -53,7 +54,7 @@ function DashCard({ data }) {
         <div>
           <h2>Looking for</h2>
           <MultiCarousel elements={roles} />
-          <Button className='mt-2' onClick={handleShowRole}>Apply</Button>
+          <Button className="mt-2" onClick={handleShowRole}>Apply</Button>
         </div>
 
       </Card.Body>
@@ -61,7 +62,8 @@ function DashCard({ data }) {
         <Button variant="primary" onClick={handleShow}>
           Learn more
         </Button>
-        <Button className='ms-1'
+        <Button
+          className="ms-1"
           onClick={handleOpen1}
         >
           Team
@@ -72,7 +74,7 @@ function DashCard({ data }) {
             <Carousel>
               <Carousel.Item>
                 <CardGroup>
-                  {members.map((member,index) => <TeamCard key={index} memberData={member} />)}
+                  {members.map((member, index) => <TeamCard key={index} memberData={member} />)}
                 </CardGroup>
               </Carousel.Item>
             </Carousel>

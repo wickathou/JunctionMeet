@@ -6,7 +6,7 @@ import RoleCard from './RoleCard';
 function MultiCarousel({ elements }) {
   let content;
   if (elements && elements.length > 0) {
-    content = elements.map((element,index) => <RoleCard key={index} roleData={element}/>);
+    content = elements.map((element, index) => <RoleCard key={index} roleData={element} />);
   }
 
   return (

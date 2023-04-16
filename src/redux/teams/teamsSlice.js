@@ -8,69 +8,69 @@ const initialState = {
       roles: ['Data', 'Sales', 'Product', 'Marketing'],
       members: [{
         name: 'Joe',
-        role: 'Team Lead'
-      },{
+        role: 'Team Lead',
+      }, {
         name: 'Laura',
-        role: 'Designer'
-      },{
+        role: 'Designer',
+      }, {
         name: 'Mikka',
-        role: 'Web Dev'
-      },]
+        role: 'Web Dev',
+      }],
     },
     {
       name: 'Last Minute',
       challenge: 'Elisa',
-      roles: ['Data','Product' , 'Sales'],
+      roles: ['Data', 'Product', 'Sales'],
       members: [{
         name: 'Alex',
-        role: 'Team Lead'
-      },{
+        role: 'Team Lead',
+      }, {
         name: 'Jane',
-        role: 'Designer'
-      },{
+        role: 'Designer',
+      }, {
         name: 'Lena',
-        role: 'Web Dev'
-      },]
+        role: 'Web Dev',
+      }],
     },
     {
       name: 'PokeHacks',
       challenge: 'Nordea',
-      roles: [ 'Sales', 'Data', 'Marketing'],
+      roles: ['Sales', 'Data', 'Marketing'],
       members: [{
         name: 'Kevin',
-        role: 'Team Lead'
-      },{
+        role: 'Team Lead',
+      }, {
         name: 'Mikko',
-        role: 'Designer'
-      },{
+        role: 'Designer',
+      }, {
         name: 'Elias',
-        role: 'Web Dev'
-      },]
+        role: 'Web Dev',
+      }],
     },
     {
       name: 'Wasteless',
       challenge: 'Startup Sauna',
-      roles: ['Data', 'Marketing','Sales', 'Product'],
+      roles: ['Data', 'Marketing', 'Sales', 'Product'],
       members: [{
         name: 'Elina',
-        role: 'Team Lead'
-      },{
+        role: 'Team Lead',
+      }, {
         name: 'Jan',
-        role: 'Designer'
-      },{
+        role: 'Designer',
+      }, {
         name: 'Lika',
-        role: 'Web Dev'
+        role: 'Web Dev',
       },
-      
-    ]
-    }
-    
+
+      ],
+    },
+
   ],
-}
+};
 
 export const teamsSlice = createSlice({
   name: 'teams',
-  initialState: initialState,
+  initialState,
   reducers: {
     increment: (state) => ({ ...state, value: state.value + 1 }),
   },

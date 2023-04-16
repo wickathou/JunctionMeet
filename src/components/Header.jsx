@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Container, Image, Nav, Navbar, NavbarBrand, NavDropdown, NavLink,
 } from 'react-bootstrap';
-import junctionLogo from '../assets/junction-emblem.png'
+import junctionLogo from '../assets/junction-emblem.png';
 import '../App.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../redux/user/userSlice';
@@ -28,7 +28,8 @@ function Header() {
                 <NavDropdown.Item>This is</NavDropdown.Item>
                 <NavDropdown.Item>Not Ready</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item>😅
+                <NavDropdown.Item>
+                  😅
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>

@@ -11,7 +11,10 @@ function RoleModal({ showRole, handleCloseRole, data }) {
         <div>
           <Modal.Title>
             {name}
-            <Badge className='ms-1' bg="primary">#{challenge}</Badge>
+            <Badge className="ms-1" bg="primary">
+              #
+              {challenge}
+            </Badge>
           </Modal.Title>
           <h2>Apply</h2>
         </div>
@@ -46,11 +49,11 @@ function RoleModal({ showRole, handleCloseRole, data }) {
                         id="custom-switch"
                         label="Check this switch"
                       />
-                      <div className='mt-1'>
+                      <div className="mt-1">
                         <Button variant="primary">
                           Submit
                         </Button>
-                        <Button className='ms-1'>Next</Button>
+                        <Button className="ms-1">Next</Button>
                       </div>
                     </Form>
                   </Tab.Pane>
@@ -63,12 +66,12 @@ function RoleModal({ showRole, handleCloseRole, data }) {
                         style={{ height: '100px' }}
                       />
                     </FloatingLabel>
-                    <div className='mt-1'>
-                        <Button variant="primary">
-                          Submit
-                        </Button>
-                        <Button className='ms-1'>Next</Button>
-                      </div>
+                    <div className="mt-1">
+                      <Button variant="primary">
+                        Submit
+                      </Button>
+                      <Button className="ms-1">Next</Button>
+                    </div>
                   </Tab.Pane>
                   <Tab.Pane eventKey="#link3">
                     <p>Some text Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sequi. Perspiciatis sit, eum porro corrupti quidem iste in amet suscipit, et debitis at ab a? Illo fugiat obcaecati quidem rerum.</p>

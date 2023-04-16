@@ -5,7 +5,7 @@ import {
 import endDesignLogo from '../assets/logo.svg';
 
 function TeamCard({ memberData }) {
-  const {name, role} = memberData;
+  const { name, role } = memberData;
 
   return (
     <Card className="teamMemberCard">

@@ -14,7 +14,7 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    login: (state) => ({ ...state, status:'Signed in' }),
+    login: (state) => ({ ...state, status: 'Signed in' }),
   },
   extraReducers: (builder) => {
     builder.addCase(fetchUser.pending, (state) => {

@@ -6,14 +6,19 @@ import endDesignLogo from '../assets/logo.svg';
 import TeamCard from './TeamCard';
 
 function TeamModal({ toggleState, handleClose, data }) {
-  const {name, members, challenge, roles} = data
+  const {
+    name, members, challenge, roles,
+  } = data;
 
   return (
     <Modal show={toggleState} size="lg" fullscreen="lg-down" onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>
           {name}
-          <Badge className='ms-1' bg="primary">#{challenge}</Badge>
+          <Badge className="ms-1" bg="primary">
+            #
+            {challenge}
+          </Badge>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -24,17 +29,28 @@ function TeamModal({ toggleState, handleClose, data }) {
             <Row>
               <Col sm={4}>
                 <ListGroup>
-                  {roles.map((role,index) => <ListGroup.Item key={index} action href={`#${role}${index}`}>
-                    {role}
-                  </ListGroup.Item>)}
+                  {roles.map((role, index) => (
+                    <ListGroup.Item key={index} action href={`#${role}${index}`}>
+                      {role}
+                    </ListGroup.Item>
+                  ))}
                 </ListGroup>
               </Col>
               <Col sm={8}>
                 <Tab.Content>
-                  {roles.map((role,index) => <Tab.Pane key={index} eventKey={`#${role}${index}`}>
-                    <p><strong>{role}</strong> text Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sequi. Perspiciatis sit, eum porro corrupti quidem iste in amet suscipit, et debitis at ab a? Illo fugiat obcaecati quidem rerum.</p>
-                    <Button key={index}>Apply to {role}</Button>
-                  </Tab.Pane>)}
+                  {roles.map((role, index) => (
+                    <Tab.Pane key={index} eventKey={`#${role}${index}`}>
+                      <p>
+                        <strong>{role}</strong>
+                        {' '}
+                        text Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sequi. Perspiciatis sit, eum porro corrupti quidem iste in amet suscipit, et debitis at ab a? Illo fugiat obcaecati quidem rerum.
+                      </p>
+                      <Button key={index}>
+                        Apply to
+                        {role}
+                      </Button>
+                    </Tab.Pane>
+                  ))}
                 </Tab.Content>
               </Col>
             </Row>
@@ -45,7 +61,7 @@ function TeamModal({ toggleState, handleClose, data }) {
           <Carousel>
             <Carousel.Item>
               <CardGroup>
-                {members.map((member,index) => <TeamCard key={index} memberData={member} />)}
+                {members.map((member, index) => <TeamCard key={index} memberData={member} />)}
               </CardGroup>
             </Carousel.Item>
           </Carousel>

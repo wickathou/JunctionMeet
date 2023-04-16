@@ -5,7 +5,7 @@ import { applyFilter } from '../redux/challenges/challengesSlice';
 
 function NavFilters() {
   const dispatch = useDispatch();
-  const { challenges,challengeFilter } = useSelector((store) => store.challenges);
+  const { challenges, challengeFilter } = useSelector((store) => store.challenges);
 
   const handleChallengeChange = (event) => {
     dispatch(applyFilter(event.target.value));
@@ -21,7 +21,7 @@ function NavFilters() {
       <Nav variant="pills" defaultActiveKey="/home">
         <Nav.Item>
           <Form.Select value={challengeFilter} onChange={handleChallengeChange}>
-            {challenges.map((challenge,index) => (
+            {challenges.map((challenge, index) => (
               <option key={index} value={challenge.name}>
                 {challenge.name}
               </option>
@@ -53,6 +53,5 @@ function NavFilters() {
 //     </select>
 //   );
 // }
-
 
 export default NavFilters;

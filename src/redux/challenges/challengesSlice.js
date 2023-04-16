@@ -16,16 +16,16 @@ const initialState = {
       name: 'Startup Sauna',
     },
     {
-      name: 'Fazer'
-    }
+      name: 'Fazer',
+    },
   ],
-}
+};
 
 export const challengesSlice = createSlice({
   name: 'challenges',
-  initialState: initialState,
+  initialState,
   reducers: {
-    applyFilter: (state, { payload }) => ({ ...state, challengeFilter: payload}),
+    applyFilter: (state, { payload }) => ({ ...state, challengeFilter: payload }),
   },
 });
 
