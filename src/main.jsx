@@ -7,7 +7,7 @@ import setupStore from './redux/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/JunctionMeet'>
       <Provider store={setupStore()}>
         <App />
       </Provider>

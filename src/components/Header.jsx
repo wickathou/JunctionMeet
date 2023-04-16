@@ -11,7 +11,7 @@ function Header() {
   const dispatch = useDispatch();
   const { status } = useSelector((store) => store.user);
 
-  const handleLogin = (event) => {
+  const handleLogin = () => {
     dispatch(login());
   };
 
