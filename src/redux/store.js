@@ -1,23 +1,17 @@
-// import { configureStore } from "@reduxjs/toolkit";
-import dataReducer from "./data/dataSlice";
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import teamsReducer from './teams/teamsSlice';
+import challengesReducer from './challenges/challengesSlice';
+import userReducer from './user/userSlice';
 
-// export default configureStore({
-//   reducer: {
-//     data: dataReducer
-//   }
-// })
-
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import userReducer from './users/usersSlice'
-// Create the root reducer independently to obtain the RootState type
 const rootReducer = combineReducers({
   user: userReducer,
-  data: dataReducer
-})
+  teams: teamsReducer,
+  challenges: challengesReducer,
+});
 
-export const setupStore = (preloadedState) => {
-  return configureStore({
-    reducer: rootReducer,
-    preloadedState
-  })
-}
+const setupStore = (preloadedState) => configureStore({
+  reducer: rootReducer,
+  preloadedState,
+});
+
+export default setupStore;
