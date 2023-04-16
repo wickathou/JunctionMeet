@@ -5,6 +5,7 @@ const initialState = {
     {
       name: 'sisuStronk',
       challenge: 'Fazer',
+      roles: ['Data', 'Sales', 'Product', 'Marketing'],
       members: [{
         name: 'Joe',
         role: 'Team Lead'
@@ -19,44 +20,49 @@ const initialState = {
     {
       name: 'Last Minute',
       challenge: 'Elisa',
+      roles: ['Data','Product' , 'Sales'],
       members: [{
-        name: 'Joe',
+        name: 'Alex',
         role: 'Team Lead'
       },{
-        name: 'Laura',
+        name: 'Jane',
         role: 'Designer'
       },{
-        name: 'Mikka',
+        name: 'Lena',
         role: 'Web Dev'
       },]
     },
     {
       name: 'PokeHacks',
       challenge: 'Nordea',
+      roles: [ 'Sales', 'Data', 'Marketing'],
       members: [{
-        name: 'Joe',
+        name: 'Kevin',
         role: 'Team Lead'
       },{
-        name: 'Laura',
+        name: 'Mikko',
         role: 'Designer'
       },{
-        name: 'Mikka',
+        name: 'Elias',
         role: 'Web Dev'
       },]
     },
     {
       name: 'Wasteless',
       challenge: 'Startup Sauna',
+      roles: ['Data', 'Marketing','Sales', 'Product'],
       members: [{
-        name: 'Joe',
+        name: 'Elina',
         role: 'Team Lead'
       },{
-        name: 'Laura',
+        name: 'Jan',
         role: 'Designer'
       },{
-        name: 'Mikka',
+        name: 'Lika',
         role: 'Web Dev'
-      },]
+      },
+      
+    ]
     }
     
   ],

@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Container, Image, Nav, Navbar, NavbarBrand, NavDropdown, NavLink,
 } from 'react-bootstrap';
-import endDesignLogo from '../assets/logo.svg';
+import junctionLogo from '../assets/junction-emblem.png'
 import '../App.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../redux/user/userSlice';
@@ -19,7 +19,7 @@ function Header() {
     <header>
       <Navbar>
         <Container>
-          <Navbar.Brand><img src={endDesignLogo} alt="End Design logo" width="100px" height="100px" /></Navbar.Brand>
+          <Navbar.Brand><img src={junctionLogo} alt="End Design logo" width="100px" height="100px" /></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto d-flex align-items-center">

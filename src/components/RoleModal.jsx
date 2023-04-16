@@ -3,16 +3,15 @@ import {
   Badge, Button, Col, FloatingLabel, Form, ListGroup, Modal, ProgressBar, Row, Tab,
 } from 'react-bootstrap';
 
-function RoleModal({ showRole, handleCloseRole, roleData }) {
+function RoleModal({ showRole, handleCloseRole, data }) {
+  const { name, challenge } = data;
   return (
     <Modal show={showRole} size="lg" fullscreen="lg-down" onHide={handleCloseRole}>
       <Modal.Header closeButton>
         <div>
           <Modal.Title>
-            Awesomness
-            {' '}
-            {roleData}
-            <Badge bg="primary">#Fazer</Badge>
+            {name}
+            <Badge className='ms-1' bg="primary">#{challenge}</Badge>
           </Modal.Title>
           <h2>Apply</h2>
         </div>
@@ -47,11 +46,13 @@ function RoleModal({ showRole, handleCloseRole, roleData }) {
                         id="custom-switch"
                         label="Check this switch"
                       />
-                      <Button variant="primary" type="submit">
-                        Submit
-                      </Button>
+                      <div className='mt-1'>
+                        <Button variant="primary">
+                          Submit
+                        </Button>
+                        <Button className='ms-1'>Next</Button>
+                      </div>
                     </Form>
-                    <Button>Next</Button>
                   </Tab.Pane>
                   <Tab.Pane eventKey="#link2">
                     <p>Some text Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sequi. Perspiciatis sit, eum porro corrupti quidem iste in amet suscipit, et debitis at ab a? Illo fugiat obcaecati quidem rerum.</p>
@@ -62,7 +63,12 @@ function RoleModal({ showRole, handleCloseRole, roleData }) {
                         style={{ height: '100px' }}
                       />
                     </FloatingLabel>
-                    <Button>Apply</Button>
+                    <div className='mt-1'>
+                        <Button variant="primary">
+                          Submit
+                        </Button>
+                        <Button className='ms-1'>Next</Button>
+                      </div>
                   </Tab.Pane>
                   <Tab.Pane eventKey="#link3">
                     <p>Some text Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sequi. Perspiciatis sit, eum porro corrupti quidem iste in amet suscipit, et debitis at ab a? Illo fugiat obcaecati quidem rerum.</p>

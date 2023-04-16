@@ -3,7 +3,7 @@ import {
   Badge, Button, Card, CardGroup, Carousel, Col, Collapse, Image, ListGroup, Row, Tab,
 } from 'react-bootstrap';
 import MultiCarousel from './MultiCarousel';
-import endDesignLogo from '../assets/logo.svg';
+import icon from '../assets/favicon.png';
 import '../App.scss';
 import TeamCard from './TeamCard';
 import TeamModal from './TeamModal';
@@ -36,19 +36,13 @@ function DashCard({ data }) {
   const {name, members, challenge, roles} = data
   console.log(members);
 
-  const teamData = {
-    members: ['joe', 'bob', 'jim'],
-    roles: ['dev', 'design', 'marketing'],
-    challenge: 'Fazer',
-  };
-
   return (
     <Card>
       <Card.Header className="d-flex align-items-center justify-content-between">
-        <Card.Img className="userIconThumbnail" src={endDesignLogo} />
+        <Card.Img className="userIconThumbnail" src={icon} />
         <Card.Title>
           {name}
-          <Badge className='ms-1' bg="primary">{challenge ? challenge : 'No challenge'}</Badge>
+          <Badge className='ms-1' bg="primary">{challenge ? `#${challenge}` : 'No challenge'}</Badge>
         </Card.Title>
       </Card.Header>
       <Card.Body>
@@ -58,18 +52,19 @@ function DashCard({ data }) {
         </Card.Text>
         <div>
           <h2>Looking for</h2>
-          <MultiCarousel elements={teamData.roles} />
+          <MultiCarousel elements={roles} />
+          <Button className='mt-2' onClick={handleShowRole}>Apply</Button>
         </div>
 
       </Card.Body>
       <Card.Footer>
         <Button variant="primary" onClick={handleShow}>
-          Launch demo modal
+          Learn more
         </Button>
-        <Button
+        <Button className='ms-1'
           onClick={handleOpen1}
         >
-          click
+          Team
         </Button>
         <Collapse in={open1}>
           <div>
@@ -84,8 +79,8 @@ function DashCard({ data }) {
           </div>
         </Collapse>
       </Card.Footer>
-      {/* <RoleModal showRole={showRole} handleCloseRole={handleCloseRole} roleData={data} />
-      <TeamModal toggleState={show} handleClose={handleClose} data={data} /> */}
+      <RoleModal showRole={showRole} handleCloseRole={handleCloseRole} data={data} />
+      <TeamModal toggleState={show} handleClose={handleClose} data={data} />
     </Card>
   );
 }
