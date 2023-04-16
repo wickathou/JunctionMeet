@@ -9,7 +9,9 @@ function RoleModal({ showRole, handleCloseRole, roleData }) {
       <Modal.Header closeButton>
         <div>
           <Modal.Title>
-            Awesomness {roleData}
+            Awesomness
+            {' '}
+            {roleData}
             <Badge bg="primary">#Fazer</Badge>
           </Modal.Title>
           <h2>Apply</h2>

@@ -15,9 +15,8 @@ function DashCard({ data }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(!open);
 
-
   const [open1, setOpen1] = useState(false);
-  const handleOpen1 = () => setOpen1(!open1)
+  const handleOpen1 = () => setOpen1(!open1);
 
   const [show, setShow] = useState(false);
 
@@ -37,9 +36,8 @@ function DashCard({ data }) {
   const teamData = {
     members: ['joe', 'bob', 'jim'],
     roles: ['dev', 'design', 'marketing'],
-    challenge: 'Fazer'
-  }
-
+    challenge: 'Fazer',
+  };
 
   return (
     <Card>
@@ -47,7 +45,7 @@ function DashCard({ data }) {
         <Card.Img className="userIconThumbnail" src={endDesignLogo} />
         <Card.Title>
           Awesomness
-          <Badge bg="primary">{teamData.challenge? teamData.challenge :'No challenge'}</Badge>
+          <Badge bg="primary">{teamData.challenge ? teamData.challenge : 'No challenge'}</Badge>
         </Card.Title>
       </Card.Header>
       <Card.Body>
@@ -57,7 +55,7 @@ function DashCard({ data }) {
         </Card.Text>
         <div>
           <h2>Looking for</h2>
-          <MultiCarousel elements={teamData.roles}/>
+          <MultiCarousel elements={teamData.roles} />
         </div>
 
       </Card.Body>
@@ -78,14 +76,14 @@ function DashCard({ data }) {
             <Carousel>
               <Carousel.Item>
                 <CardGroup>
-                  {teamData.members.map((member) => <TeamCard key={member} memberData={member}/>)}
+                  {teamData.members.map((member) => <TeamCard key={member} memberData={member} />)}
                 </CardGroup>
               </Carousel.Item>
             </Carousel>
           </div>
         </Collapse>
       </Card.Footer>
-      <RoleModal showRole={showRole} handleCloseRole={handleCloseRole} roleData={data}/>
+      <RoleModal showRole={showRole} handleCloseRole={handleCloseRole} roleData={data} />
       <TeamModal toggleState={show} handleClose={handleClose} data={data} />
     </Card>
   );

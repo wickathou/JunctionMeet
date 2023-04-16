@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-// import { userAPI } from './userAPI'
 
 export const fetchUser = createAsyncThunk('user/fetchUser', async () => {
   const response = await { data: 'Some user fetched' };
@@ -16,7 +15,7 @@ const userSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchUser.pending, (state, action) => {
+    builder.addCase(fetchUser.pending, (state) => {
       state.status = 'loading';
     });
     builder.addCase(fetchUser.fulfilled, (state, action) => {

@@ -1,7 +1,7 @@
-import React from 'react'
-import { Badge, Button, Modal } from 'react-bootstrap'
+import React from 'react';
+import { Badge, Button, Modal } from 'react-bootstrap';
 
-function MemberModal({showMember, handleCloseMember}) {
+function MemberModal({ showMember, handleCloseMember }) {
   return (
     <Modal show={showMember} size="md" fullscreen="lg-down" onHide={handleCloseMember}>
       <Modal.Header closeButton>
@@ -23,7 +23,7 @@ function MemberModal({showMember, handleCloseMember}) {
         </Button>
       </Modal.Footer>
     </Modal>
-  )
+  );
 }
 
-export default MemberModal
+export default MemberModal;

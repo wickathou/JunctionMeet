@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Badge, Button, Card, CardGroup, Carousel, Col, Image, ListGroup, Modal, Row, Tab,
 } from 'react-bootstrap';
-import MultiCarousel from './MultiCarousel';
 import endDesignLogo from '../assets/logo.svg';
 
 function TeamModal({ toggleState, handleClose, data }) {

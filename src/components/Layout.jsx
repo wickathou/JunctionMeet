@@ -1,8 +1,8 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Header from './Header'
-import NavFilters from './NavFilters'
-import { Container } from 'react-bootstrap'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
+import Header from './Header';
+import NavFilters from './NavFilters';
 
 function Layout() {
   return (
@@ -10,10 +10,10 @@ function Layout() {
       <Header />
       <NavFilters />
       <Container>
-        <Outlet/>
+        <Outlet />
       </Container>
     </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;
