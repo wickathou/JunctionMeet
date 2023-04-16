@@ -33,6 +33,9 @@ function DashCard({ data }) {
   const handleCloseMember = () => setShowMember(false);
   const handleShowMember = () => setShowMember(true);
 
+  const {name, members, challenge, roles} = data
+  console.log(members);
+
   const teamData = {
     members: ['joe', 'bob', 'jim'],
     roles: ['dev', 'design', 'marketing'],
@@ -44,8 +47,8 @@ function DashCard({ data }) {
       <Card.Header className="d-flex align-items-center justify-content-between">
         <Card.Img className="userIconThumbnail" src={endDesignLogo} />
         <Card.Title>
-          Awesomness
-          <Badge bg="primary">{teamData.challenge ? teamData.challenge : 'No challenge'}</Badge>
+          {name}
+          <Badge className='ms-1' bg="primary">{challenge ? challenge : 'No challenge'}</Badge>
         </Card.Title>
       </Card.Header>
       <Card.Body>
@@ -62,8 +65,6 @@ function DashCard({ data }) {
       <Card.Footer>
         <Button variant="primary" onClick={handleShow}>
           Launch demo modal
-          {' '}
-          {data}
         </Button>
         <Button
           onClick={handleOpen1}
@@ -76,15 +77,15 @@ function DashCard({ data }) {
             <Carousel>
               <Carousel.Item>
                 <CardGroup>
-                  {teamData.members.map((member) => <TeamCard key={member} memberData={member} />)}
+                  {members.map((member,index) => <TeamCard key={index} memberData={member} />)}
                 </CardGroup>
               </Carousel.Item>
             </Carousel>
           </div>
         </Collapse>
       </Card.Footer>
-      <RoleModal showRole={showRole} handleCloseRole={handleCloseRole} roleData={data} />
-      <TeamModal toggleState={show} handleClose={handleClose} data={data} />
+      {/* <RoleModal showRole={showRole} handleCloseRole={handleCloseRole} roleData={data} />
+      <TeamModal toggleState={show} handleClose={handleClose} data={data} /> */}
     </Card>
   );
 }

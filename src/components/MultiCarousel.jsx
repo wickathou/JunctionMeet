@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReactMultiCarousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import RoleCard from './RoleCard';
@@ -6,7 +6,7 @@ import RoleCard from './RoleCard';
 function MultiCarousel({ elements }) {
   let content;
   if (elements && elements.length > 0) {
-    content = elements.map((element) => <RoleCard />);
+    content = elements.map((element,index) => <RoleCard key={index}/>);
   }
 
   return (

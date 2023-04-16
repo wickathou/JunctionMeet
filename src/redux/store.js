@@ -1,11 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import dataReducer from './data/dataSlice';
-
-import userReducer from './users/usersSlice';
+import teamsReducer from './teams/teamsSlice';
+import challengesReducer from './challenges/challengesSlice';
+import userReducer from './user/userSlice';
 
 const rootReducer = combineReducers({
   user: userReducer,
-  data: dataReducer,
+  teams: teamsReducer,
+  challenges: challengesReducer,
 });
 
 const setupStore = (preloadedState) => configureStore({

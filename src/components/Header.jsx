@@ -4,8 +4,17 @@ import {
 } from 'react-bootstrap';
 import endDesignLogo from '../assets/logo.svg';
 import '../App.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../redux/user/userSlice';
 
 function Header() {
+  const dispatch = useDispatch();
+  const { status } = useSelector((store) => store.user);
+
+  const handleLogin = (event) => {
+    dispatch(login());
+  };
+
   return (
     <header>
       <Navbar>
@@ -14,20 +23,14 @@ function Header() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto d-flex align-items-center">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <Nav.Link onClick={handleLogin}>{status}</Nav.Link>
+              <NavDropdown title="Menu" id="basic-nav-dropdown">
+                <NavDropdown.Item>This is</NavDropdown.Item>
+                <NavDropdown.Item>Not Ready</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
+                <NavDropdown.Item>😅
                 </NavDropdown.Item>
               </NavDropdown>
-              <Image className="userIconThumbnail" roundedCircle src={endDesignLogo} />
             </Nav>
           </Navbar.Collapse>
         </Container>
